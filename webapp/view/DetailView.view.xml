@@ -1,0 +1,62 @@
+<mvc:View controllerName="app.split.controller.DetailView"
+    displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="idDetail" title="{i18n>Detail}">
+       
+         <content>
+			<!--<Button text="{/supplierTab/0/name}"></Button>-->
+			<ObjectHeader icon="{toolModel>icon}" intro="{toolModel>id}" number="{toolModel>price}" numberUnit="{toolModel>currency}"
+				title="{toolModel>name}"></ObjectHeader>
+		</content>
+		<IconTabBar>
+			<items>
+				<IconTabFilter icon="sap-icon://information">
+					<content>
+						<f:SimpleForm>
+							<Label text="ID"></Label>
+							<Text text="{toolModel>id}"></Text>
+							<Label text="Name"></Label>
+							<Text text="{toolModel>name}"></Text>
+							<Label text="Description"></Label>
+							<Text text="{toolModel>description}"></Text>
+						</f:SimpleForm>
+					</content>
+				</IconTabFilter>
+				<IconTabFilter icon="sap-icon://supplier">
+					<content>
+						<Table items="{/supplierTab}">
+							<columns>
+								<Column>
+									<Text text="id"></Text>
+								</Column>
+								<Column>
+									<Text text="Name"></Text>
+								</Column>
+								<Column>
+									<Text text="Contact Person"></Text>
+								</Column>
+								<Column>
+									<Text text="email"></Text>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{id}"></Text>
+										<Text text="{name}"></Text>
+										<Input value="{contact_person}"
+										showValueHelp="true" valueHelpRequest="f4Help"></Input>
+										<Text text="{email}"></Text>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</IconTabFilter>
+			</items>
+		</IconTabBar>
+    
+    </Page>
+</mvc:View>

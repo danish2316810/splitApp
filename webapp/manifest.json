@@ -1,0 +1,118 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "app.split",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.16.3",
+            "toolsId": "59adb960-54e4-4920-887c-a309291dbc3e"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.132.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "app.split.i18n.i18n"
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "transition": "slide",
+                "type": "View",
+                "viewType": "XML",
+                "path": "app.split.view",
+                "async": true,
+                "viewPath": "app.split.view"
+            },
+            "routes": [
+                {
+                    "name": "RouteView1",
+                    "pattern": "",
+                    "target": [
+                        "TargetView1","TargetEmpty"
+                    ]
+                },
+                {
+                    "name": "RouteDetail",
+                    "pattern": "detail/{id}",
+                    "target": [
+                        "TargetView1","TargetDetail"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "id": "View1",
+                    "name": "View1",
+                    "controlAggregation":"masterPages",
+                    "level":1
+                },
+                "TargetEmpty": {
+                    "id": "empty",
+                    "name": "emptyView",
+                    "controlAggregation":"detailPages",
+                    "level":1
+                },
+                "TargetDetail": {
+                    "id": "detail",
+                    "name": "DetailView",
+                    "controlAggregation":"detailPages",
+                    "level":2
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "app.split.view.App",
+            "type": "XML",
+            "id": "App"
+        }
+    }
+}
