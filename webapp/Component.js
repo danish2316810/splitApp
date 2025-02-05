@@ -21,8 +21,6 @@ sap.ui.define([
 
             // enable routing
             this.getRouter().initialize();
-            var oRouter=this.getRouter()
-            oRouter.navTo("RouteView1", {}, true); 
         }
     });
 });

@@ -7,14 +7,6 @@ sap.ui.define([
 
     return Controller.extend("app.split.controller.View1", {
         
-
-        onPressForm:function(){
-            let oRouter=this.getOwnerComponent().getRouter()
-            oRouter.navTo("RouteForm")
- 
- 
-         },
-
         onItemPress:function(oControlEvent){
             var item=oControlEvent.getParameter("listItem");
             var sPath=item.oBindingContexts.toolModel.sPath;
